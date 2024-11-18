@@ -3,7 +3,6 @@
 set tabstop=4 softtabstop=0 shiftwidth=4 noexpandtab smarttab
 
 set formatoptions+=r
-colorscheme darkblue " better than elflord for javascript
 
 :set number
 
