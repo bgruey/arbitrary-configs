@@ -1,0 +1,25 @@
+
+# Load python environment
+alias senv="source ./venv/bin/activate"
+
+# Create a new python environment and install requirements if available
+#   1. Optional, name of environment folder, default to venv
+#   2. Optional, name of requirements.txt file, default to requirements.txt
+npyenv() {
+    VENV_DIR=${1:-venv}
+    if [[ ! -d "$VENV_DIR" ]]
+    then
+        echo "Python environment not found, creating at: $VENV_DIR"
+        python3 -m venv "$VENV_DIR"
+    fi  
+    senv
+    REQUIREMENTS=${2:-requirements.txt}
+    if [[ -f "$REQUIREMENTS" ]]
+    then
+        echo "Installing requirements: $REQUIREMENTS"
+        python -m pip install -r "$REQUIREMENTS"
+    else
+        echo "No requirements found: $REQUIREMENTS"
+    fi  
+}
+

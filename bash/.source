@@ -1,0 +1,12 @@
+
+files=(.bash .py-bash)
+path="$HOME/"
+for file in ${files[@]}
+do 
+    file_to_load=$path$file
+    if [ -f "$file_to_load" ];
+    then
+        . $file_to_load
+        echo "loaded $file_to_load"
+    fi
+done
