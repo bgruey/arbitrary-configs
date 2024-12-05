@@ -1,7 +1,7 @@
-
-files=(.bash .py-bash)
+#BEGIN
+files=(.bash .py-bash .octave)
 path="$HOME/"
-for file in ${files[@]}
+for file in "${files[@]}"
 do 
     file_to_load=$path$file
     if [ -f "$file_to_load" ];
@@ -10,3 +10,4 @@ do
         echo "loaded $file_to_load"
     fi
 done
+#END
